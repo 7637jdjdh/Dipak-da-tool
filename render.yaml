@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: telegram-number-bot
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python telegram_bot.py
+    healthCheckPath: /health
+    envVars:
+      - key: API_ID
+        value: 34564214
+      - key: API_HASH
+        value: f3366498b42504fe7ef2198ebf2e0434
+      - key: TARGET_BOT
+        value: @Tgnumberrrr_bot
+      - key: PORT
+        value: 10000
